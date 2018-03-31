@@ -52,7 +52,7 @@ The lifecycle of your dependencies depends on their registered `Reuse`, which is
 
 `.singleton` dependencies are only stored in the root scope of the container across a scope hierarchy. They are only disposed when the container scope itself is disposed.
 
-`.inScope` are bound to the scope from which they are resolved from. Consider the following example:
+`.inScope` dependencies are bound to the resolving scope. Consider the following example:
 
 ```swift
 var container = Container()
