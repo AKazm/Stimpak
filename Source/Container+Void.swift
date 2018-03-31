@@ -40,9 +40,9 @@ public extension Container {
 				
 		}
 		
-		public func resolve<Service>(_ serviceType: Service.Type = Service.self, _ name: AnyHashable? = nil)
+		public func resolve<Service>(_ serviceType: Service.Type = Service.self, _ key: AnyHashable? = nil)
 										-> Service? {
-				return self.rootScope.internalResolve(serviceType, Void.self, (), name)
+				return self.rootScope.internalResolve(serviceType, Void.self, (), key)
 		}
 		
 		public static func +=<Service: Instantiable>(lhs: Container, rhs: Service.Type) {
