@@ -4,14 +4,16 @@ public extension Container {
 		
 		@discardableResult
 		public func unregister<Service, Args>(_ type: Service.Type, _ argType: Args.Type, key: AnyHashable? = nil) -> Bool {
-			return unregister(ResolverKey<Service, Args>(key))
+				return unregister(ResolverKey<Service, Args>(key))
 		}
 		
 		private func unregister<Service, Args>(_ key: ResolverKey<Service, Args>) -> Bool {
-		
+				
 				if resolvers.keys.contains(key) {
 						lock.lock()
-						defer { lock.unlock() }
+						defer {
+								lock.unlock()
+						}
 						resolvers.removeValue(forKey: key)
 						return true
 				}
@@ -25,7 +27,7 @@ public extension Container {
 		}
 		
 		public static func +=<Service, Args>(lhs: Container, rhs: (Service.Type, (_ args: Args) -> Service, IfRegistered))
-												throws {
+		throws {
 				try lhs.register(rhs.0, rhs.1, reuse: Container.DefaultReuse, ifRegistered: rhs.2)
 		}
 		

@@ -11,7 +11,9 @@ public extension Container {
 				
 				if resolvers.keys.contains(key) {
 						lock.lock()
-						defer { lock.unlock() }
+						defer {
+								lock.unlock()
+						}
 						resolvers.removeValue(forKey: key)
 						return true
 				}
@@ -37,14 +39,14 @@ public extension Container {
 								ifRegistered: ifRegistered)
 				
 		}
-
+		
 		public func resolve<Service>(_ serviceType: Service.Type = Service.self, _ name: AnyHashable? = nil)
 										-> Service? {
 				return self.rootScope.internalResolve(serviceType, Void.self, (), name)
 		}
 		
 		public static func +=<Service: Instantiable>(lhs: Container, rhs: Service.Type) {
-			lhs.register(rhs)
+				lhs.register(rhs)
 		}
 		
 		public static func +=<Service: Instantiable>(lhs: Container, rhs: (Service.Type, IfRegistered)) throws {
