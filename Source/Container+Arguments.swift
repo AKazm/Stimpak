@@ -35,6 +35,10 @@ public extension Container {
 				lhs.register(rhs.0, rhs.1, key: rhs.2)
 		}
 		
+		public static func +=<Service, Args>(lhs: Container, rhs: (Service.Type, (_ args: Args) -> Service)) {
+				lhs.register(rhs.0, rhs.1, reuse: Container.DefaultReuse)
+		}
+		
 		public static func +=<Service, Args>(lhs: Container, rhs: (Service.Type, (_ args: Args) -> Service, Reuse)) {
 				lhs.register(rhs.0, rhs.1, reuse: rhs.2)
 		}
