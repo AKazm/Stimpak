@@ -89,7 +89,8 @@ let supposedSteve = container.resolve(Foo.self, ("Steve", "Jobs"))
 
 ```swift
 container.register(Foo.self, { (_ a: String, _ b: String) -> Foo in return Foo(a, b) }, reuse: Reuse.inScope )
-				.compareArgsBy( { ( a: (String, String), b: (String, String) ) -> Bool in return a.0 == b.0 && a.1 == a.1 })
+				.compareArgsBy( { ( a: (String, String), b: (String, String) ) -> Bool in
+                      return a.0 == b.0 && a.1 == b.1 })
 ```
 
 You can also specify keys of type `AnyHashable` as a registration argument:
