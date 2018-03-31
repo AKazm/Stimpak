@@ -5,8 +5,9 @@ public final class Container {
 		internal let lock = NSLock()
 		internal var resolvers = [AnyHashable: ServiceResolverProtocol]()
 		internal lazy var rootScope = Scope(0xB16B00B5, container: self)
+		
 		public static let DefaultIfRegistered = IfRegistered.skip
-		public static var DefaultReuse = Reuse.inScope
+		public static let DefaultReuse = Reuse.transient
 		
 		public init() {
 		}
