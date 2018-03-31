@@ -9,10 +9,10 @@
 #import <Cocoa/Cocoa.h>
 
 //! Project version number for Stimpak.
-FOUNDATION_EXPORT double StimpakVersionNumber;
+FOUNDATION_EXPORT double StimpakMacOsVersionNumber;
 
 //! Project version string for Stimpak.
-FOUNDATION_EXPORT const unsigned char StimpakVersionString[];
+FOUNDATION_EXPORT const unsigned char StimpakMacOsVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <Stimpak/PublicHeader.h>
 
