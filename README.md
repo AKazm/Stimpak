@@ -78,7 +78,7 @@ container.register(Foo.self, { (_ a: String, _ b: String) -> Foo in return Foo(a
 container.resolve(Foo.self, ("Bill", "Gates"))
 ```
 
-`register` returns a `ServiceResolver<Foo, (String, String)>` in this case. You can specify an `ArgEqualityComparator` as well as an instantiation callback for ServiceResolvers. `ArgEqualityComparator` is important if you do want to prevent that ...
+`register` returns a `ServiceResolver<Foo, (String, String)>` in this case. You can specify an `ArgEqualityComparator` as well as an initialization callback for ServiceResolvers. `ArgEqualityComparator` is important if you do want to prevent that ...
 
 ```swift
 let gates = container.resolve(Foo.self, ("Bill", "Gates"))
