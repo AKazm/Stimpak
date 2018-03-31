@@ -15,9 +15,9 @@ Please note that this documentation is WIP. If you have any questions, please [c
 ```swift
 public class Foo {
 
-		public init() {
+	public init() {
 
-		}
+	}
 
 }
 
@@ -65,7 +65,7 @@ let aFoo = aScope.resolve(Foo.self)
 let bFoo = bScope.resolve(Foo.self)
 ```
 
-`aFoo` and `bFoo` are different instances because they have been resolved from within completely different scopes.
+`aFoo` and `bFoo` are different instances because they have been resolved from within different scopes.
 
 ### Register & Resolve with arguments
 
@@ -108,9 +108,9 @@ Stimpak comes with a simple Protocol called `Instantiable`. Each struct or class
 ```swift
 public class Foo : Instantiable {
 
-		public required init() {
+	public required init() {
 
-		}
+	}
 
 }
 ```
