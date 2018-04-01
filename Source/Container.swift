@@ -9,8 +9,7 @@ public final class Container {
   public static let DefaultIfRegistered = IfRegistered.skip
   public static let DefaultReuse = Reuse.transient
   
-  public init() {
-  }
+  public init() { }
   
   internal func getResolver<Service, Args>(_ resolverKey: ResolverKey<Service, Args>) -> ServiceResolver<Service, Args>? {
     return resolvers[resolverKey] as? ServiceResolver<Service, Args>
@@ -18,37 +17,6 @@ public final class Container {
   
   internal func getResolver<Service>(_ resolverKey: ResolverKey<Service, Void>) -> ServiceResolver<Service, Void>? {
     return resolvers[resolverKey] as? ServiceResolver<Service, Void>
-  }
-  
-  @discardableResult
-  public func register<Service>(_ type: Service.Type, _ resolver: @escaping () -> Service,
-                                reuse: Reuse = Container.DefaultReuse, key: AnyHashable? = nil)
-                  -> ServiceResolver<Service, Void> {
-    return try! _register(type, resolver, reuse, key: key, ifRegistered: Container.DefaultIfRegistered)
-  }
-  
-  @discardableResult
-  public func register<Service>(_ type: Service.Type, _ resolver: @escaping () -> Service,
-                                reuse: Reuse = Container.DefaultReuse, key: AnyHashable? = nil,
-                                ifRegistered: IfRegistered) throws
-                  -> ServiceResolver<Service, Void> {
-    return try! _register(type, resolver, reuse, key: key, ifRegistered: ifRegistered)
-  }
-  
-  @discardableResult
-  public func register<Service, Args>(_ type: Service.Type, _ resolver: @escaping (_ args: Args) -> Service,
-                                      reuse: Reuse = Container.DefaultReuse, key: AnyHashable? = nil,
-                                      _ argType: Args.Type = Args.self)
-                  -> ServiceResolver<Service, Args> {
-    return try! _register(type, resolver, reuse, key: key, ifRegistered: Container.DefaultIfRegistered)
-  }
-  
-  @discardableResult
-  public func register<Service, Args>(_ type: Service.Type, _ resolver: @escaping (_ args: Args) -> Service,
-                                      reuse: Reuse = Container.DefaultReuse, key: AnyHashable? = nil,
-                                      ifRegistered: IfRegistered, _ argType: Args.Type = Args.self) throws
-                  -> ServiceResolver<Service, Args> {
-    return try! _register(type, resolver, reuse, key: key, ifRegistered: ifRegistered)
   }
   
   private func _register<Service, Args>(_ type: Service.Type, _ resolver: @escaping (_ args: Args) -> Service,
@@ -85,6 +53,41 @@ public final class Container {
   
   private func selfDispose() {
     resolvers.removeAll()
+  }
+  
+}
+
+extension Container {
+  
+  @discardableResult
+  public func register<Service>(_ type: Service.Type, _ resolver: @escaping () -> Service,
+                                reuse: Reuse = Container.DefaultReuse, key: AnyHashable? = nil)
+                  -> ServiceResolver<Service, Void> {
+    return try! _register(type, resolver, reuse, key: key, ifRegistered: Container.DefaultIfRegistered)
+  }
+  
+  @discardableResult
+  public func register<Service>(_ type: Service.Type, _ resolver: @escaping () -> Service,
+                                reuse: Reuse = Container.DefaultReuse, key: AnyHashable? = nil,
+                                ifRegistered: IfRegistered) throws
+                  -> ServiceResolver<Service, Void> {
+    return try! _register(type, resolver, reuse, key: key, ifRegistered: ifRegistered)
+  }
+  
+  @discardableResult
+  public func register<Service, Args>(_ type: Service.Type, _ resolver: @escaping (_ args: Args) -> Service,
+                                      reuse: Reuse = Container.DefaultReuse, key: AnyHashable? = nil,
+                                      _ argType: Args.Type = Args.self)
+                  -> ServiceResolver<Service, Args> {
+    return try! _register(type, resolver, reuse, key: key, ifRegistered: Container.DefaultIfRegistered)
+  }
+  
+  @discardableResult
+  public func register<Service, Args>(_ type: Service.Type, _ resolver: @escaping (_ args: Args) -> Service,
+                                      reuse: Reuse = Container.DefaultReuse, key: AnyHashable? = nil,
+                                      ifRegistered: IfRegistered, _ argType: Args.Type = Args.self) throws
+                  -> ServiceResolver<Service, Args> {
+    return try! _register(type, resolver, reuse, key: key, ifRegistered: ifRegistered)
   }
   
 }
