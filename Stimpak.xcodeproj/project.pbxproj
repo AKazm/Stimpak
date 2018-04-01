@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58A6E3EDB5A0D6A0F4A42037 /* RecursiveMutex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6E55CE85774BBA16E8F62 /* RecursiveMutex.swift */; };
+		58A6E91ED13A5C1C6396996F /* Examples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6E2AC2188799E85DCBC9C /* Examples.swift */; };
 		6516E025207008300046C2E5 /* StimpakMacOs.h in Headers */ = {isa = PBXBuildFile; fileRef = 6516E023207008300046C2E5 /* StimpakMacOs.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6516E055207008830046C2E5 /* StimpakIOs.h in Headers */ = {isa = PBXBuildFile; fileRef = 6516E053207008830046C2E5 /* StimpakIOs.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6516E079207009CE0046C2E5 /* Reuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6516E069207009CE0046C2E5 /* Reuse.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		58A6E2AC2188799E85DCBC9C /* Examples.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Examples.swift; sourceTree = "<group>"; };
+		58A6E55CE85774BBA16E8F62 /* RecursiveMutex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecursiveMutex.swift; sourceTree = "<group>"; };
 		6516E020207008300046C2E5 /* StimpakMacOs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StimpakMacOs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6516E023207008300046C2E5 /* StimpakMacOs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StimpakMacOs.h; sourceTree = "<group>"; };
 		6516E024207008300046C2E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -125,6 +129,8 @@
 				6516E06F207009CE0046C2E5 /* ServiceInstance.swift */,
 				6516E078207009CE0046C2E5 /* ServiceResolver.swift */,
 				6516E075207009CE0046C2E5 /* ServiceResolverProtocol.swift */,
+				58A6E2AC2188799E85DCBC9C /* Examples.swift */,
+				58A6E55CE85774BBA16E8F62 /* RecursiveMutex.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -269,6 +275,8 @@
 				6516E081207009CE0046C2E5 /* Scope.swift in Sources */,
 				6516E089207009CE0046C2E5 /* Container.swift in Sources */,
 				6516E093207009CE0046C2E5 /* ScopeProtocol.swift in Sources */,
+				58A6E91ED13A5C1C6396996F /* Examples.swift in Sources */,
+				58A6E3EDB5A0D6A0F4A42037 /* RecursiveMutex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
