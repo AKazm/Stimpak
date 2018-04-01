@@ -1,5 +1,3 @@
-import Foundation
-
 extension Container: ScopeProtocol {
 		public var scopeKey: AnyHashable {
 				get {

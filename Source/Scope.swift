@@ -1,9 +1,3 @@
-//
-// Created by Andre Kazmierczak on 30.03.18.
-//
-
-import Foundation
-
 public final class Scope: ScopeProtocol {
   
   internal let lock = RecursiveMutex()

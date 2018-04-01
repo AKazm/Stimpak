@@ -1,5 +1,3 @@
-import Foundation
-
 internal class ServiceInstance<Service, Args>: ServiceResolverProtocol {
 		
 		internal let reuse: Reuse

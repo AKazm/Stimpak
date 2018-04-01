@@ -1,6 +1,4 @@
-import Foundation
-
-internal class ResolverKey<Service, Args>: Hashable {
+internal final class ResolverKey<Service, Args>: Hashable {
 		
 		internal let key: AnyHashable?
 		internal let serviceType = Service.self

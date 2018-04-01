@@ -1,5 +1,3 @@
-import Foundation
-
 public final class Container {
   
   internal let lock = RecursiveMutex()

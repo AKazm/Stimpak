@@ -1,5 +1,3 @@
-import Foundation
-
 public protocol ScopeProtocol {
 		
 		var scopeKey: AnyHashable { get }

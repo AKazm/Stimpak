@@ -1,5 +1,3 @@
-import Foundation
-
 public final class ServiceResolver<Service, Args>: ServiceResolverProtocol {
 		public typealias ArgEqualityComparator = (Args, Args) -> Bool
 		public typealias ResolverCallback = (_ scope: Scope, _ obj: Service) -> Void
