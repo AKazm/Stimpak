@@ -72,3 +72,11 @@ fastlane/test_output
 .idea/xcode.xml
 .idea/codeStyles/Project.xml
 Stimpak.xcodeproj/xcuserdata/
+.idea/codeStyles/codeStyleConfig.xml
+Stimpak.xcodeproj/project.pbxproj
+Stimpak.xcodeproj/Stimpak_Info.plist
+Stimpak.xcodeproj/StimpakTests_Info.plist
+Stimpak.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+Stimpak.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Stimpak.xcodeproj/xcshareddata/xcschemes/Stimpak-Package.xcscheme
+Stimpak.xcodeproj/xcshareddata/xcschemes/xcschememanagement.plist
