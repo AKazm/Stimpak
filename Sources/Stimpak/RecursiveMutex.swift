@@ -1,5 +1,6 @@
 //Credit goes to Tommy van der Vorst, https://gist.github.com/pixelspark
 //https://gist.github.com/pixelspark/e5836624303083ea2f04d59c25a468dd
+import Foundation
 
 final class RecursiveMutex {
   
